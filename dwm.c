@@ -1583,7 +1583,7 @@ run(void)
 void
 runAutostart(void) {
 	system("cd ~/.dwm; ./autostart_blocking.sh");
-	system("cd ~/home/tiago/repos/dwm; ./autostart.sh &");
+	system("cd ~/repos/dwm; ./autostart.sh &");
 }
 
 void
