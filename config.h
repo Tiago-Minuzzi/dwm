@@ -140,6 +140,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
     // Added by TM
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
     { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = clipmenu } },
     { MODKEY|ControlMask,           XK_d,      spawn,          {.v = displaysel } },
     { MODKEY|Mod1Mask,              XK_e,      spawn,          {.v = emojis } },
