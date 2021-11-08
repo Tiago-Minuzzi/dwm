@@ -43,15 +43,16 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
     /* Floating apps */
+    { "Eog",                    NULL,       NULL,       0,            1,           -1 },
     { "Gnome-calculator",       NULL,       NULL,       0,            1,           -1 },
+    { "Gnome-terminal",         NULL,       NULL,       0,            1,           -1 },
     { "Gpick",                  NULL,       NULL,       0,            1,           -1 },
     { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
     { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
     { "Pavucontrol",            NULL,       NULL,       0,            1,           -1 },
-    { "Eog",                    NULL,       NULL,       0,            1,           -1 },
-    { "Timeshift",              NULL,       NULL,       0,            1,           -1 },
     { "SimpleScreenRecorder",   NULL,       NULL,       0,            1,           -1 },
-    { "Gnome-terminal",         NULL,       NULL,       0,            1,           -1 },
+    { "Timeshift",              NULL,       NULL,       0,            1,           -1 },
+    { "Transmission-gtk",       NULL,       NULL,       0,            1,           -1 },
 
     /* Open apps on tags*/
     { "Gimp",     NULL,       NULL,       0,            1,           -1 },
