@@ -17,10 +17,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10", "Font Awesome 5 Free Solid:size=10", "JoyPixels:style=Regular:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
+// Background color
 static const char col_gray1[]       = "#171a1f";
+// Inactive window border color
 static const char col_gray2[]       = "#444444";
+// Font color
 static const char col_gray3[]       = "#bbbbbb";
+// Current tag and current window font color
 static const char col_gray4[]       = "#eeeeee";
+// Top bar second color (blue) and active window border color
 static const char col_cyan[]        = "#4877b1";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
