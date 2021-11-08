@@ -55,8 +55,9 @@ static const Rule rules[] = {
     { "Transmission-gtk",       NULL,       NULL,       0,            1,           -1 },
 
     /* Open apps on tags*/
-    { "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Org.gnome.Nautilus",     NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
+    { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
