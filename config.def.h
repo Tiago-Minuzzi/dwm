@@ -105,6 +105,8 @@ static const char *playcmd[]    = { "playerctl", "play-pause", NULL };
 static const char *prevcmd[]    = { "playerctl", "previous", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "1", "-5%", NULL };
 static const char *volupcmd[]   = { "pactl", "set-sink-volume", "1", "+5%", NULL };
+static const char *brightup[]   = { "brightnessctl", "set", "+5%", NULL };
+static const char *brightdown[] = { "brightnessctl", "set", "5%-", NULL };
 static const char *xfce4term[]  = { "gnome-terminal", NULL };
 static const char *xkill[]      = { "xkill", NULL };
 
@@ -185,6 +187,8 @@ static Key keys[] = {
     { 0,                            XF86XK_AudioMute, spawn, {.v = mutecmd } },
     { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
     { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
+    { 0,                            XF86XK_MonBrightnessUp,     spawn, {.v = brightup } },
+    { 0,                            XF86XK_MonBrightnessDown,   spawn, {.v = brightdown } },
 
 };
 
