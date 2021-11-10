@@ -109,6 +109,7 @@ static const char *brightup[]   = { "brightnessctl", "set", "+5%", NULL };
 static const char *brightdown[] = { "brightnessctl", "set", "5%-", NULL };
 static const char *xfce4term[]  = { "gnome-terminal", NULL };
 static const char *xkill[]      = { "xkill", NULL };
+static const char *keepass[]    = { "flatpak", "run", "org.keepassxc.KeePassXC", NULL };
 
 
 static Key keys[] = {
@@ -154,6 +155,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
     { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = clipmenu } },
     { MODKEY|ControlMask,           XK_d,      spawn,          {.v = displaysel } },
+    { MODKEY|ControlMask,           XK_k,      spawn,          {.v = keepass } },
     { MODKEY|Mod1Mask,              XK_e,      spawn,          {.v = emojis } },
     { Mod1Mask|ControlMask,         XK_t,      spawn,          {.v = xfce4term } },
     { MODKEY,                       XK_n,      spawn,          {.v = fmgui } },
