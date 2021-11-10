@@ -5,6 +5,6 @@ exec slstatus &
 nm-applet &
 unclutter &
 lxpolkit &
-/home/tiago/.local/bin/greenclip daemon &
+greenclip daemon &
 setxkbmap -layout us -variant intl &
 export _JAVA_AWT_WM_NONREPARENTING=1
