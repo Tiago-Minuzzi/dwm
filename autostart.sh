@@ -5,6 +5,7 @@ exec slstatus &
 nm-applet &
 unclutter &
 lxpolkit &
+brightnessctl set 50% &
 greenclip daemon &
 setxkbmap -layout us -variant intl &
 export _JAVA_AWT_WM_NONREPARENTING=1
