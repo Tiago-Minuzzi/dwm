@@ -110,6 +110,8 @@ static const char *brightup[]   = { "brightnessctl", "set", "+5%", NULL };
 static const char *brightdown[] = { "brightnessctl", "set", "5%-", NULL };
 static const char *xfce4term[]  = { "gnome-terminal", NULL };
 static const char *xkill[]      = { "xkill", NULL };
+static const char *scrot[]      = { "scrot", NULL };
+static const char *scrotsel[]   = { "scrot", "-s", NULL };
 static const char *keepass[]    = { "flatpak", "run", "org.keepassxc.KeePassXC", NULL };
 
 
@@ -162,6 +164,8 @@ static Key keys[] = {
     { MODKEY,                       XK_n,      spawn,          {.v = fmgui } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = flameshot } },
     { MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fmtui } },
+    { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = scrot } },
+    { MODKEY|ShiftMask|ControlMask, XK_s,      spawn,          {.v = scrotsel } },
     { MODKEY,                       XK_b,      spawn,          {.v = firefox } },
     { MODKEY|ShiftMask|ControlMask, XK_b,      spawn,          {.v = vivaldi } },
     { MODKEY|ControlMask,           XK_b,      spawn,          {.v = epiphany } },
