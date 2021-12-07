@@ -1,4 +1,5 @@
 greenclip daemon &
+dunst &
 exec slstatus &
 #picom --config /home/tiago/.config/picom/picom.conf &
 #xrandr --output eDP-1 --mode 1440x900 &
