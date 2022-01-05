@@ -60,6 +60,7 @@ static const Rule rules[] = {
 	{ "Evince",                 NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
     { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
+    { "Sublime_text",           NULL,       NULL,       1 << 2,       0,           -1 },
 };
 
 /* layout(s) */
