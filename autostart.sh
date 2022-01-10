@@ -18,12 +18,13 @@
 #    sleep 2s
 #done &
 exec slstatus &
-#xrandr --output HDMI1 --mode 1920x1080 --left-of eDP --output eDP --off &
+nm-applet &
+xrandr --output HDMI1 --mode 1920x1080 --left-of eDP --output eDP --off &
 #xrandr --output HDMI1 --off --left-of eDP --output eDP --mode 1366x768 &
 #picom --config /home/tiago/.config/picom/picom.conf &
 ~/.fehbg &
-#redshift &
-#caffeine &
+redshift &
+caffeine &
 unclutter &
 polkit &
 greenclip daemon &
