@@ -45,7 +45,7 @@ static const Rule rules[] = {
     /* Floating apps */
     { "Eog",                    NULL,       NULL,       0,            1,           -1 },
     { "Gnome-calculator",       NULL,       NULL,       0,            1,           -1 },
-    { "Gnome-terminal",         NULL,       NULL,       0,            1,           -1 },
+    { "Xfce4-terminal",         NULL,       NULL,       0,            1,           -1 },
     { "Gpick",                  NULL,       NULL,       0,            1,           -1 },
     { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
     { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
@@ -55,7 +55,7 @@ static const Rule rules[] = {
     { "Transmission-gtk",       NULL,       NULL,       0,            1,           -1 },
 
     /* Open apps on tags*/
-	{ "Org.gnome.Nautilus",     NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Thunar",     NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
     { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
 };
@@ -93,9 +93,9 @@ static const char *firefox[]    = { "firefox", NULL };
 static const char *vivaldi[]    = { "firefox", "--private-window", NULL };
 static const char *epiphany[]   = { "epiphany", NULL };
 static const char *qutebro[]    = { "qutebrowser", NULL };
-static const char *fmgui[]      = { "nautilus", NULL };
+static const char *fmgui[]      = { "thunar", NULL };
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *fmtui[]      = { "gnome-terminal", "-e", "ranger", NULL };
+static const char *fmtui[]      = { "xfce4-terminal", "--", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
 static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
 static const char *displaysel[] = { "bash", ".local/bin/dwmDisplay", NULL };
@@ -105,7 +105,7 @@ static const char *playcmd[]    = { "playerctl", "play-pause", NULL };
 static const char *prevcmd[]    = { "playerctl", "previous", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "1", "-5%", NULL };
 static const char *volupcmd[]   = { "pactl", "set-sink-volume", "1", "+5%", NULL };
-static const char *xfce4term[]  = { "gnome-terminal", NULL };
+static const char *xfce4term[]  = { "xfce4-terminal", NULL };
 static const char *xkill[]      = { "xkill", NULL };
 
 
