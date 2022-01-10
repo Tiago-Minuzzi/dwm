@@ -48,7 +48,7 @@ static const Rule rules[] = {
     { "konsole",                NULL,       NULL,       0,            1,           -1 },
     { "Gpick",                  NULL,       NULL,       0,            1,           -1 },
     { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
-    { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
+    { "Blanket",      NULL,       NULL,       0,            1,           -1 },
     { "Pavucontrol",            NULL,       NULL,       0,            1,           -1 },
     { "SimpleScreenRecorder",   NULL,       NULL,       0,            1,           -1 },
     { "Timeshift",              NULL,       NULL,       0,            1,           -1 },
