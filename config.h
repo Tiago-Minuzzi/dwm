@@ -45,7 +45,7 @@ static const Rule rules[] = {
     /* Floating apps */
     { "Eog",                    NULL,       NULL,       0,            1,           -1 },
     { "Gnome-calculator",       NULL,       NULL,       0,            1,           -1 },
-    { "Xfce4-terminal",         NULL,       NULL,       0,            1,           -1 },
+    { "konsole",                NULL,       NULL,       0,            1,           -1 },
     { "Gpick",                  NULL,       NULL,       0,            1,           -1 },
     { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
     { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
@@ -55,7 +55,7 @@ static const Rule rules[] = {
     { "Transmission-gtk",       NULL,       NULL,       0,            1,           -1 },
 
     /* Open apps on tags*/
-	{ "Thunar",     NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "dolphin",                NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
     { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
 };
@@ -87,15 +87,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 // Added by TM
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]    = { "alacritty", NULL };
 static const char *clipmenu[]   = { "bash", ".local/bin/copyToClip", NULL };
 static const char *firefox[]    = { "firefox", NULL };
 static const char *vivaldi[]    = { "firefox", "--private-window", NULL };
-static const char *epiphany[]   = { "epiphany", NULL };
 static const char *qutebro[]    = { "qutebrowser", NULL };
-static const char *fmgui[]      = { "thunar", NULL };
+static const char *fmgui[]      = { "dolphin", NULL };
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *fmtui[]      = { "xfce4-terminal", "--", "ranger", NULL };
+static const char *fmtui[]      = { "konsole", "-e", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
 static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
 static const char *displaysel[] = { "bash", ".local/bin/dwmDisplay", NULL };
@@ -105,7 +104,7 @@ static const char *playcmd[]    = { "playerctl", "play-pause", NULL };
 static const char *prevcmd[]    = { "playerctl", "previous", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "1", "-5%", NULL };
 static const char *volupcmd[]   = { "pactl", "set-sink-volume", "1", "+5%", NULL };
-static const char *xfce4term[]  = { "xfce4-terminal", NULL };
+static const char *xfce4term[]  = { "konsole", NULL };
 static const char *xkill[]      = { "xkill", NULL };
 
 
@@ -159,7 +158,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fmtui } },
     { MODKEY,                       XK_b,      spawn,          {.v = firefox } },
     { MODKEY|ShiftMask|ControlMask, XK_b,      spawn,          {.v = vivaldi } },
-    { MODKEY|ControlMask,           XK_b,      spawn,          {.v = epiphany } },
     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = qutebro } },
     { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = suslock } },
     { MODKEY|ShiftMask|ControlMask, XK_k,      spawn,          {.v = xkill } },
