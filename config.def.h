@@ -58,6 +58,7 @@ static const Rule rules[] = {
     /* Open apps on tags*/
 	{ "Org.gnome.Nautilus",     NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Evince",                 NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Mendeley Desktop",       NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
     { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
     { "Sublime_text",           NULL,       NULL,       1 << 2,       0,           -1 },
