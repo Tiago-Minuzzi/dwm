@@ -60,6 +60,7 @@ static const Rule rules[] = {
 	{ "Evince",                 NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Mendeley Desktop",       NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "qutebrowser",            NULL,       NULL,       1 << 8,       0,           -1 },
     { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
     { "Sublime_text",           NULL,       NULL,       1 << 2,       0,           -1 },
 };
@@ -99,7 +100,7 @@ static const char *epiphany[]   = { "epiphany", NULL };
 static const char *qutebro[]    = { "qutebrowser", NULL };
 static const char *fmgui[]      = { "nautilus", NULL };
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *fmtui[]      = { "gnome-terminal", "-e", "ranger", NULL };
+static const char *fmtui[]      = { "alacritty", "-e", "ranger", NULL };
 static const char *mutecmd[]    = { "amixer", "set", "Master", "toggle", NULL };
 static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
 static const char *displaysel[] = { "bash", ".local/bin/dwmDisplay", NULL };
