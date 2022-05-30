@@ -3,6 +3,9 @@ rshift () {
         killall -9 redshift &&
         redshift -x &&
         redshift
+    else
+        redshift
+    fi
 }
 
 exec slstatus &
@@ -17,7 +20,8 @@ flameshot &
 rshift &
 caffeine &
 unclutter &
-polkit &
+#polkit &
+lxsession &
 greenclip daemon &
 setxkbmap -layout us -variant intl &
 export _JAVA_AWT_WM_NONREPARENTING=1
