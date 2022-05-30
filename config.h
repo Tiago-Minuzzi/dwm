@@ -46,9 +46,9 @@ static const Rule rules[] = {
     { "konsole",                NULL,       NULL,       0,            1,           -1 },
 
     /* Open apps on tags*/
-	{ "dolphin",                NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Atom",                   NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "Subl",                   NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Atom",                   NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Subl",                   NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Thunar",                 NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Virt-manager",           NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
     { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
