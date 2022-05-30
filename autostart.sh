@@ -1,3 +1,10 @@
+rshift () {
+    if pgrep redshift;then
+        killall -9 redshift &&
+        redshift -x &&
+        redshift
+}
+
 exec slstatus &
 nm-applet &
 xrandr --output HDMI1 --mode 1920x1080 --left-of eDP --output eDP --off &
@@ -6,7 +13,8 @@ xrandr --output HDMI1 --mode 1920x1080 --left-of eDP --output eDP --off &
 dunst &
 ~/.fehbg &
 flameshot &
-redshift &
+#redshift &
+rshift &
 caffeine &
 unclutter &
 polkit &
