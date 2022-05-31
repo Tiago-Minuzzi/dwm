@@ -50,10 +50,11 @@ static const Rule rules[] = {
 	{ "Subl",                   NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Thunar",                 NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Virt-manager",           NULL,       NULL,       1 << 3,       0,           -1 },
-    { "Xreader",                NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "ranger",                 NULL,       NULL,       1 << 2,       0,           -1 },
     { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
     { "Soffice",                NULL,       NULL,       1 << 6,       0,           -1 },
+    { "Xreader",                NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
@@ -88,7 +89,7 @@ static const char *displaysel[] = { "bash", ".local/bin/dwmDisplay", NULL };
 static const char *emojis[]     = { "bash", ".local/bin/emoji-select", NULL };
 static const char *firefox[]    = { "firefox", NULL };
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *fmgui[]      = { "dolphin", NULL };
+static const char *fmgui[]      = { "Thunar", NULL };
 static const char *fmtui[]      = { "alacritty", "--class", "ranger,ranger", "-t", "ranger","-e", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
 static const char *nextcmd[]    = { "playerctl", "next", NULL };
