@@ -52,7 +52,7 @@ static const Rule rules[] = {
 	{ "Virt-manager",           NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "ranger",                 NULL,       NULL,       1 << 2,       0,           -1 },
-    { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
+    { "Gimp",                   NULL,       NULL,       1 << 5,       0,           -1 },
     { "Soffice",                NULL,       NULL,       1 << 6,       0,           -1 },
     { "Xreader",                NULL,       NULL,       1 << 6,       0,           -1 },
 };
