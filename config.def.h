@@ -49,6 +49,7 @@ static const Rule rules[] = {
 	{ "Atom",                   NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Subl",                   NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Thunar",                 NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Transmission-gtk",       NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Virt-manager",           NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "firefox",                NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "ranger",                 NULL,       NULL,       1 << 2,       0,           -1 },
