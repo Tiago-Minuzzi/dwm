@@ -2,6 +2,8 @@
 
 dwm (dynamic window manager) is an extremely fast, small, and dynamic window manager for X.
 
+This build is using dwm version 6.4.
+
 ## Packages
 
 - alacritty
@@ -42,8 +44,8 @@ dwm (dynamic window manager) is an extremely fast, small, and dynamic window man
 
 ## Installation
 ------------
-Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+Edit `config.mk` to match your local setup (dwm is installed into
+the `/usr/local` namespace by default).
 
 Afterwards enter the following command to build and install dwm (if
 necessary as root):
