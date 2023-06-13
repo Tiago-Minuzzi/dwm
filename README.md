@@ -2,7 +2,21 @@
 
 dwm (dynamic window manager) is an extremely fast, small, and dynamic window manager for X.
 
-This build is using dwm version 6.4.
+This build is using dwm version 6.4, and is meant to be run on Arch Linux.
+
+## Installation
+
+Clone this repo to `$HOME/.dwm`, enter the directory and run the script `install.sh`.
+
+Edit `config.mk` to match your local setup (dwm is installed into
+the `/usr/local` namespace by default).
+
+**Dependencies**
+
+- git
+- go
+- yay
+- base-devel
 
 ## Packages
 
@@ -34,6 +48,8 @@ This build is using dwm version 6.4.
 - dwm-systray-6.4
 - dwm-vanitygaps-20200610-f09418b
 
+**OBS**: for the autostart patch to work, the `autostart.sh` file must be in any of the following location -> `$XDG_DATA_HOME/dwm`, `$HOME/.local/share/dwm`, and `$HOME/.dwm` 
+
 ## Scripts
 
 - copyToClip
@@ -42,12 +58,3 @@ This build is using dwm version 6.4.
 - getVol
 - weather.sh
 
-## Installation
-------------
-Edit `config.mk` to match your local setup (dwm is installed into
-the `/usr/local` namespace by default).
-
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
-
-    make clean install
