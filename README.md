@@ -24,6 +24,7 @@ the `/usr/local` namespace by default).
 - brightnessctl
 - dmenu
 - feh
+- libxft
 - playerctl
 - polkit (any)
 - ranger
@@ -35,8 +36,8 @@ the `/usr/local` namespace by default).
 - ttf-joypixels
 - ueberzug
 - unclutter
-- xcb-util-image
 - xorg-setxkbmap
+- xorg-xrandr
 
 ## Patches
 
