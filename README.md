@@ -36,7 +36,9 @@ the `/usr/local` namespace by default).
 - ttf-joypixels
 - ueberzug
 - unclutter
+- xorg-server
 - xorg-setxkbmap
+- xorg-xinit
 - xorg-xrandr
 
 ## Patches
