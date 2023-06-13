@@ -1,8 +1,6 @@
 # My build of suckless dwm
 
-dwm - dynamic window manager
-============================
-dwm is an extremely fast, small, and dynamic window manager for X.
+dwm (dynamic window manager) is an extremely fast, small, and dynamic window manager for X.
 
 ## Packages
 
