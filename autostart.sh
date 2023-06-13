@@ -1,4 +1,5 @@
 exec slstatus &
+dunst &
 sxhkd &
 ~/.local/bin/displayConnect &
 unclutter &
