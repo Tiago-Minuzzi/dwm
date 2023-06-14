@@ -25,6 +25,7 @@ the `/usr/local` namespace by default).
 - dmenu
 - feh
 - libxft
+- nm-applet
 - playerctl
 - polkit (any)
 - ranger
