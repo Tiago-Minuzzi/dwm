@@ -1,4 +1,5 @@
 exec slstatus &
+nm-applet &
 dunst &
 sxhkd &
 ~/.local/bin/displayConnect &
