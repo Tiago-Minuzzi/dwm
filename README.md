@@ -30,6 +30,7 @@ the `/usr/local` namespace by default).
 - polkit (any)
 - ranger
 - rofi-greenclip
+- scrot
 - slstatus
 - sxhkd
 - ttf-font-awesome
@@ -37,6 +38,7 @@ the `/usr/local` namespace by default).
 - ttf-joypixels
 - ueberzug
 - unclutter
+- xkill
 - xorg-server
 - xorg-setxkbmap
 - xorg-xinit
