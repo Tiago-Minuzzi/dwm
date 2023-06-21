@@ -20,7 +20,6 @@ the `/usr/local` namespace by default).
 
 ## Packages
 
-- alacritty
 - brightnessctl
 - dmenu
 - feh
