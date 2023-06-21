@@ -18,8 +18,9 @@ else
     exit 1
 fi
 
-echo "### Cloning dmenu and slstatus ###"
+echo -e "### Cloning dmenu, slstatus and st \n###"
 git clone --depth 1 https://github.com/Tiago-Minuzzi/dmenu $HOME/.config/dmenu && cd $HOME/.config/dmenu && sudo make clean install && \
 git clone --depth 1 https://github.com/Tiago-Minuzzi/slstatus $HOME/.config/slstatus && cd $HOME/.config/slstatus && sudo make clean install && \
+git clone --depth 1 https://github.com/Tiago-Minuzzi/st $HOME/.config/st && cd $HOME/.config/st && sudo make clean install && \
 cd && echo "You may need to restart dwm to run slstatus"
 

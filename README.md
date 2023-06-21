@@ -32,13 +32,14 @@ the `/usr/local` namespace by default).
 - rofi-greenclip
 - scrot
 - slstatus
+- st
 - sxhkd
 - ttf-font-awesome
 - ttf-jetbrains-mono
 - ttf-joypixels
 - ueberzug
 - unclutter
-- xkill
+- xorg-xkill
 - xorg-server
 - xorg-setxkbmap
 - xorg-xinit
