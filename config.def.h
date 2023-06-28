@@ -1,4 +1,4 @@
-#include "themes/myDefault.h"
+#include "themes/catppuccin.h"
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
