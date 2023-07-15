@@ -6,7 +6,7 @@ echo "=============================================================="
 echo "|| By running this script you're allowing SUDO privilegies! ||"
 echo "=============================================================="
 
-sudo pacman -S --needed brightnessctl feh libxft playerctl network-manager-applet polkit-kde-agent ranger scrot sxhkd ttf-font-awesome ttf-jetbrains-mono ttf-joypixels ueberzug unclutter xorg-xkill xorg-server xorg-setxkbmap xorg-xinit xorg-xrandr && \
+sudo pacman -S --needed blueman bluez brightnessctl feh libxft lxseesion-gtk3 playerctl network-manager-applet ranger scrot sxhkd ttf-font-awesome ttf-jetbrains-mono ttf-joypixels ueberzug unclutter xorg-xkill xorg-server xorg-setxkbmap xorg-xinit xorg-xrandr && \
 
 echo "### Building dwm ###"
 sudo make clean install && \

@@ -20,6 +20,8 @@ the `/usr/local` namespace by default).
 
 ## Packages
 
+- blueman
+- bluez
 - brightnessctl
 - dmenu
 - feh
