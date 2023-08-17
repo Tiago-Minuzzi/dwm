@@ -47,6 +47,7 @@ static const Rule rules[] = {
 	{ "Zotero",  "Toplevel",  NULL,       0,            1,           -1 },
 	{ "feh",     "feh",       NULL,       0,            1,           -1 },
 	{ "Pavucontrol",          NULL,       NULL,         0,            1,           -1 },
+	{ "Arandr",               NULL,       NULL,         0,            1,           -1 },
 };
 
 /* layout(s) */
