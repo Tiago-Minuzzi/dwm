@@ -25,6 +25,7 @@ the `/usr/local` namespace by default).
 - brightnessctl
 - dmenu
 - feh
+- j4-dmenu-desktop
 - libxft
 - nm-applet
 - playerctl
