@@ -39,8 +39,8 @@ the `/usr/local` namespace by default).
 - ttf-font-awesome
 - ttf-jetbrains-mono
 - ttf-joypixels
-- ueberzug
 - unclutter
+- w3m
 - xorg-xkill
 - xorg-server
 - xorg-setxkbmap
