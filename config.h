@@ -1,4 +1,4 @@
-#include "themes/catppuccin.h"
+#include "themes/onedark.h"
 #include "movestack.c"
 /* See LICENSE file for copyright and license details. */
 
