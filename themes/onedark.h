@@ -1,5 +1,5 @@
 // Background color
-static const char col_gray1[]       = "#252931";
+static const char col_gray1[]       = "#1e2127";
 // Inactive window border color
 static const char col_gray2[]       = "#282c33";
 // Font color
