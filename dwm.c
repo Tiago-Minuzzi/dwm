@@ -55,10 +55,7 @@
 #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
-#define NUMTAGS					(LENGTH(tags) + LENGTH(scratchpads))
-#define TAGMASK     			((1 << NUMTAGS) - 1)
-#define SPTAG(i) 				((1 << LENGTH(tags)) << (i))
-#define SPTAGMASK   			(((1 << LENGTH(scratchpads))-1) << LENGTH(tags))
+#define TAGMASK                 ((1 << LENGTH(tags)) - 1)
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 
 #define SYSTEM_TRAY_REQUEST_DOCK    0
@@ -231,6 +228,12 @@ static void restack(Monitor *m);
 static void run(void);
 static void runautostart(void);
 static void scan(void);
+static void scratchpad_hide ();
+static _Bool scratchpad_last_showed_is_killed (void);
+static void scratchpad_remove ();
+static void scratchpad_show ();
+static void scratchpad_show_client (Client * c);
+static void scratchpad_show_first (void);
 static int sendevent(Window w, Atom proto, int m, long d0, long d1, long d2, long d3, long d4);
 static void sendmon(Client *c, Monitor *m);
 static void setclientstate(Client *c, long state);
@@ -260,7 +263,6 @@ static void tagmon(const Arg *arg);
 static void tile(Monitor *m);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
-static void togglescratch(const Arg *arg);
 static void togglefullscr(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
@@ -332,6 +334,10 @@ static Drw *drw;
 static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
 
+/* scratchpad */
+# define SCRATCHPAD_MASK (1u << sizeof tags / sizeof * tags)
+static Client * scratchpad_last_showed = NULL;
+
 /* configuration, allows nested code to access above variables */
 #include "config.h"
 
@@ -345,7 +351,7 @@ struct Pertag {
 };
 
 /* compile-time check if all tags fit into an unsigned int bit array. */
-struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
+struct NumTags { char limitexceeded[LENGTH(tags) > 30 ? -1 : 1]; };
 
 /* function implementations */
 void
@@ -372,11 +378,6 @@ applyrules(Client *c)
 		{
 			c->isfloating = r->isfloating;
 			c->tags |= r->tags;
-			if ((r->tags & SPTAGMASK) && r->isfloating) {
-				c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
-				c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
-			}
-
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)
 				c->mon = m;
@@ -386,7 +387,8 @@ applyrules(Client *c)
 		XFree(ch.res_class);
 	if (ch.res_name)
 		XFree(ch.res_name);
-	c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : (c->mon->tagset[c->mon->seltags] & ~SPTAGMASK);
+	if (c->tags != SCRATCHPAD_MASK)
+		c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : c->mon->tagset[c->mon->seltags];
 }
 
 int
@@ -1762,6 +1764,98 @@ scan(void)
 	}
 }
 
+static void scratchpad_hide ()
+{
+	if (selmon -> sel)
+	{
+		selmon -> sel -> tags = SCRATCHPAD_MASK;
+		selmon -> sel -> isfloating = 1;
+		focus(NULL);
+		arrange(selmon);
+	}
+}
+
+static _Bool scratchpad_last_showed_is_killed (void)
+{
+	_Bool killed = 1;
+	for (Client * c = selmon -> clients; c != NULL; c = c -> next)
+	{
+		if (c == scratchpad_last_showed)
+		{
+			killed = 0;
+			break;
+		}
+	}
+	return killed;
+}
+
+static void scratchpad_remove ()
+{
+	if (selmon -> sel && scratchpad_last_showed != NULL && selmon -> sel == scratchpad_last_showed)
+		scratchpad_last_showed = NULL;
+}
+
+static void scratchpad_show ()
+{
+	if (scratchpad_last_showed == NULL || scratchpad_last_showed_is_killed ())
+		scratchpad_show_first ();
+	else
+	{
+		if (scratchpad_last_showed -> tags != SCRATCHPAD_MASK)
+		{
+			scratchpad_last_showed -> tags = SCRATCHPAD_MASK;
+			focus(NULL);
+			arrange(selmon);
+		}
+		else
+		{
+			_Bool found_current = 0;
+			_Bool found_next = 0;
+			for (Client * c = selmon -> clients; c != NULL; c = c -> next)
+			{
+				if (found_current == 0)
+				{
+					if (c == scratchpad_last_showed)
+					{
+						found_current = 1;
+						continue;
+					}
+				}
+				else
+				{
+					if (c -> tags == SCRATCHPAD_MASK)
+					{
+						found_next = 1;
+						scratchpad_show_client (c);
+						break;
+					}
+				}
+			}
+			if (found_next == 0) scratchpad_show_first ();
+		}
+	}
+}
+
+static void scratchpad_show_client (Client * c)
+{
+	scratchpad_last_showed = c;
+	c -> tags = selmon->tagset[selmon->seltags];
+	focus(c);
+	arrange(selmon);
+}
+
+static void scratchpad_show_first (void)
+{
+	for (Client * c = selmon -> clients; c != NULL; c = c -> next)
+	{
+		if (c -> tags == SCRATCHPAD_MASK)
+		{
+			scratchpad_show_client (c);
+			break;
+		}
+	}
+}
+
 void
 sendmon(Client *c, Monitor *m)
 {
@@ -2105,10 +2199,6 @@ showhide(Client *c)
 	if (!c)
 		return;
 	if (ISVISIBLE(c)) {
-		if ((c->tags & SPTAGMASK) && c->isfloating) {
-			c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
-			c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
-		}
 		/* show clients top down */
 		XMoveWindow(dpy, c->win, c->x, c->y);
 		if ((!c->mon->lt[c->mon->sellt]->arrange || c->isfloating) && !c->isfullscreen)
@@ -2251,32 +2341,6 @@ togglefullscr(const Arg *arg)
 }
 
 void
-togglescratch(const Arg *arg)
-{
-	Client *c;
-	unsigned int found = 0;
-	unsigned int scratchtag = SPTAG(arg->ui);
-	Arg sparg = {.v = scratchpads[arg->ui].cmd};
-
-	for (c = selmon->clients; c && !(found = c->tags & scratchtag); c = c->next);
-	if (found) {
-		unsigned int newtagset = selmon->tagset[selmon->seltags] ^ scratchtag;
-		if (newtagset) {
-			selmon->tagset[selmon->seltags] = newtagset;
-			focus(NULL);
-			arrange(selmon);
-		}
-		if (ISVISIBLE(c)) {
-			focus(c);
-			restack(selmon);
-		}
-	} else {
-		selmon->tagset[selmon->seltags] |= scratchtag;
-		spawn(&sparg);
-	}
-}
-
-void
 toggletag(const Arg *arg)
 {
 	unsigned int newtags;
@@ -2360,6 +2424,8 @@ unmanage(Client *c, int destroyed)
 		XSetErrorHandler(xerror);
 		XUngrabServer(dpy);
 	}
+	if (scratchpad_last_showed == c)
+		scratchpad_last_showed = NULL;
 	free(c);
 	focus(NULL);
 	updateclientlist();
